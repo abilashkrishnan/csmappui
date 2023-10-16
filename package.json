@@ -6,7 +6,6 @@
     "build": "vite build",
     "start": "vite",
     "typeCheck": "tsc --noEmit",
-    "test": "jest"
   },
   "dependencies": {
     "@bigcommerce/big-design": "^0.36.2",
