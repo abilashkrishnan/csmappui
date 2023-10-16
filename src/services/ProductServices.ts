@@ -8,7 +8,7 @@ export const createProduct = async (values:any) => {
     //     setAuthToken(formData?.environment)
     // }
     try {
-        const res = await trackPromise(axios.post(`http://localhost:3000/product/create`,values));
+        const res = await trackPromise(axios.post(`https://csmappbc.azurewebsites.net/product/create`,values));
         return res.data;
       } catch (error:any) {
         // console.log(error.response);
