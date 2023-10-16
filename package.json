@@ -1,0 +1,53 @@
+{
+  "name": "@bigcommerce/examples",
+  "private": true,
+  "version": "0.23.2",
+  "scripts": {
+    "build": "vite build",
+    "start": "vite",
+    "typeCheck": "tsc --noEmit",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@bigcommerce/big-design": "^0.36.2",
+    "@bigcommerce/big-design-icons": "^0.23.2",
+    "@bigcommerce/big-design-theme": "^0.19.2",
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@testing-library/user-event": "^14.5.1",
+    "@types/express": "^4.17.17",
+    "@types/multer": "^1.4.7",
+    "axios": "^1.4.0",
+    "bootstrap": "^5.3.1",
+    "express": "^4.18.2",
+    "formik": "^2.0.6",
+    "multer": "^1.4.5-lts.1",
+    "papaparse": "^5.4.1",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.8.0",
+    "react-bootstrap-icons": "^1.10.3",
+    "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
+    "react-promise-tracker": "^2.1.1",
+    "react-spinners": "^0.13.8",
+    "styled-components": "^5.3.5",
+    "yup": "^1.0.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.20",
+    "@babel/preset-react": "^7.22.15",
+    "@babel/preset-typescript": "^7.23.0",
+    "@testing-library/react": "^14.0.0",
+    "@types/jest": "^29.5.5",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.6",
+    "@types/styled-components": "^5.1.26",
+    "@vitejs/plugin-react": "^4.0.0",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "react-test-renderer": "^18.2.0",
+    "typescript": "^4.4.3",
+    "vite": "^4.1.1"
+  }
+}

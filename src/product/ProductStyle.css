@@ -1,0 +1,35 @@
+.productform{
+margin: 2% 15%;
+}
+.buttonContainer{
+    display: flex;
+    justify-content: center;
+}
+.uploadButton{
+    margin-top: 15px;
+    background-color: #6f49e1 !important;
+    border-color:  #6f49e1 !important;
+}
+.productListContainer tbody tr td{
+    max-width:350px; /* Customise it accordingly */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .dropzone {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    min-height: 150px;
+  }
+  
+  .dropzone:hover {
+    background-color: #f8f8f8;
+  }
+  .custom-progress-bar {
+    height: 30px !important;
+    font-size: 20px !important; /* Change this value to your desired height */
+  }
+  
+  

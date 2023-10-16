@@ -1,0 +1,3 @@
+import { EffectCallback } from 'react';
+export declare const useDidUpdate: (effect: EffectCallback) => void;
+//# sourceMappingURL=useDidUpdate.d.ts.map

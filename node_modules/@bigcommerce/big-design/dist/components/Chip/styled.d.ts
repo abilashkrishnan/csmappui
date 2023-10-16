@@ -1,0 +1,4 @@
+/// <reference types="react" />
+export declare const StyledChip: import("styled-components").StyledComponent<import("react").MemoExoticComponent<import("react").ForwardRefExoticComponent<import("../Box/Box").BoxProps & import("react").RefAttributes<HTMLDivElement>>>, import("styled-components").DefaultTheme, {}, never>;
+export declare const StyledCloseButton: import("styled-components").StyledComponent<import("react").ForwardRefExoticComponent<import("../Button/Button").ButtonProps & import("react").RefAttributes<HTMLButtonElement>>, import("styled-components").DefaultTheme, {}, never>;
+//# sourceMappingURL=styled.d.ts.map
