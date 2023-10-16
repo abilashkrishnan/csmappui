@@ -3,39 +3,42 @@
 
 name: Build and deploy Node.js app to Azure Web App - csmappui
 
+# Run the workflow whenever change is pushed into the main branch
 on:
   push:
     branches:
       - main
   workflow_dispatch:
-
+  
+# There are two jobs in this workflow - build and deploy
 jobs:
+ # Builds the application for production. 
+ # You should configure this environment as close as possible to the production environment, e.g. using Ubuntu for Linux apps, using the same Node version
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
       - name: Set up Node.js version
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: '18.x'
 
-      - name: npm install, build, and test
+      - name: Install dependencies, build, and test
         run: |
           npm install
           npm run build --if-present
           npm run test --if-present
-
-      - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+         # Other scripts if configured should be added here, such as linting, formating
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: node-app
-          path: release.zip
-
+          path: dist # This should be your distribution path, not the root path
+ 
+ # Deploy the application to Azure
   deploy:
     runs-on: ubuntu-latest
     needs: build
@@ -49,14 +52,11 @@ jobs:
         with:
           name: node-app
 
-      - name: Unzip artifact for deployment
-        run: unzip release.zip
-
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'csmappui'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8BDC0F9741784B08BA5A89D931841482 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8BDC0F9741784B08BA5A89D931841482 }} # Publish profile should always be stored as secrets in your repository Settings - Secrets and variables - Actions - secrets
           package: .
