@@ -48,12 +48,15 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: node-app
-          
+
+      - name: Unzip artifact for deployment
+        run: unzip release.zip
+
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'csm-ui'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1AB78E85730842B495A6C63BACB6A0FD }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_14AA8F7B504548FDB492B51DE00971A7 }}
           package: .
